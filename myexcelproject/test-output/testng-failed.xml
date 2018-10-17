@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    <listener class-name="framework.listeners.CustomListeners"/>
+    <listener class-name="framework.listeners.FailureRetryListener"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="testcases.TC001">
+        <methods>
+          <include name="runTest"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="closeSuite"/>
+          <include name="initiateSuite"/>
+        </methods>
+      </class> <!-- testcases.TC001 -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
