@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="2" total="3" passed="1">
+<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="34016" started-at="2018-10-17T06:45:05Z" finished-at="2018-10-17T06:45:39Z">
+  <suite started-at="2018-10-18T11:15:10Z" name="Suite" finished-at="2018-10-18T11:15:20Z" duration-ms="9898">
     <groups>
     </groups>
-    <test name="Test" duration-ms="34016" started-at="2018-10-17T06:45:05Z" finished-at="2018-10-17T06:45:39Z">
+    <test started-at="2018-10-18T11:15:10Z" name="Test" finished-at="2018-10-18T11:15:20Z" duration-ms="9898">
       <class name="testcases.TC001">
-        <test-method status="PASS" signature="initiateSuite()[pri:0, instance:testcases.TC001@23faf8f2]" name="initiateSuite" is-config="true" duration-ms="628" started-at="2018-10-17T06:45:04Z" finished-at="2018-10-17T06:45:05Z">
+        <test-method is-config="true" signature="initiateSuite()[pri:0, instance:testcases.TC001@53aac487]" started-at="2018-10-18T11:15:09Z" name="initiateSuite" finished-at="2018-10-18T11:15:10Z" duration-ms="307" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initiateSuite -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testcases.TC001@23faf8f2]" name="setUp" is-config="true" duration-ms="20307" started-at="2018-10-17T06:45:05Z" finished-at="2018-10-17T06:45:25Z">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testcases.TC001@53aac487]" started-at="2018-10-18T11:15:10Z" name="setUp" finished-at="2018-10-18T11:15:16Z" duration-ms="6667" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="runTest()[pri:0, instance:testcases.TC001@23faf8f2]" name="runTest" duration-ms="8172" started-at="2018-10-17T06:45:25Z" finished-at="2018-10-17T06:45:34Z">
+        <test-method signature="runTest()[pri:0, instance:testcases.TC001@53aac487]" started-at="2018-10-18T11:15:16Z" name="runTest" finished-at="2018-10-18T11:15:18Z" duration-ms="1794" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcases.TC001@23faf8f2]" name="tearDown" is-config="true" duration-ms="3134" started-at="2018-10-17T06:45:36Z" finished-at="2018-10-17T06:45:39Z">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testcases.TC001@53aac487]" started-at="2018-10-18T11:15:19Z" name="tearDown" finished-at="2018-10-18T11:15:20Z" duration-ms="891" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="closeSuite()[pri:0, instance:testcases.TC001@23faf8f2]" name="closeSuite" is-config="true" duration-ms="1" started-at="2018-10-17T06:45:39Z" finished-at="2018-10-17T06:45:39Z">
+        <test-method is-config="true" signature="closeSuite()[pri:0, instance:testcases.TC001@53aac487]" started-at="2018-10-18T11:15:20Z" name="closeSuite" finished-at="2018-10-18T11:15:20Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeSuite -->
