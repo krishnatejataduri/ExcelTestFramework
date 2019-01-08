@@ -33,7 +33,7 @@ public class EventListener extends BaseTest implements WebDriverEventListener {
 	public void afterClickOn(WebElement arg0, WebDriver arg1) {
 		switch(elementType){
 		case "button":{
-			test.log(LogStatus.INFO, "Clicked on :"+ " "+ elementName);
+			test.log(LogStatus.INFO, "Clicked on "+elementType+":"+ " "+ elementName);
 			break;
 			
 		}
