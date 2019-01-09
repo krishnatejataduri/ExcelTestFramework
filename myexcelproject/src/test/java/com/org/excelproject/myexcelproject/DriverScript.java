@@ -86,7 +86,7 @@ public class DriverScript extends BaseTest {
 				gCurrentInputVal = gRunTimeTestScript.readCell("UserInput", gCurrentStepNumber);
 				try{
 					Select select = new Select(gCurrentObject);
-					select.selectByValue(gCurrentInputVal);
+					select.selectByVisibleText(gCurrentInputVal);
 				}
 				catch (Exception e){
 					test.log(LogStatus.FAIL, "Unable to find the value: "+gCurrentInputVal+" in the dropdown: "+gCurrentObjectName);
