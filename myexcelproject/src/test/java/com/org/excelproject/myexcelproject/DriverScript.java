@@ -51,49 +51,82 @@ public class DriverScript extends BaseTest {
 	
 	
 	private WebElement m_ObjectBuilder(){
-		gCurrentLocator = gRuntimeORTable.get(gCurrentObjectName);
-		System.out.println(gCurrentLocator);
-		return DriverContext.Driver.findElement(By.xpath(gCurrentLocator));
+		try {
+			gCurrentLocator = gRuntimeORTable.get(gCurrentObjectName);
+			System.out.println("Locator: "+gCurrentLocator);
+			return DriverContext.Driver.findElement(By.xpath(gCurrentLocator));
+		}
+		catch(Exception e) {
+			switch(e.getClass().getSimpleName()) {
+				case "NoSuchElementException":{
+					
+					test.log(LogStatus.FAIL, "Unable to locate the Object: "+gCurrentObjectName+" using the locator provided.");
+					
+				}
+			}
+			return null;							
+		}
+				
 	}
 	
+	
 	public void m_PerformAction(){
-		gCurrentAction = gRunTimeTestScript.readCell("Action", gCurrentStepNumber);
-		switch(gCurrentAction.toLowerCase()){
-		
-			case "click" :{
-				try{
-					gCurrentObject.click();
-				}
-				catch(Exception e){
-					test.log(LogStatus.FAIL, "Exception occured while trying to click on: "+gCurrentObjectName+"."+e.getMessage());
-				}
-				break;
-			}
+		if(gCurrentObject!=null) {
+			gCurrentAction = gRunTimeTestScript.readCell("Action", gCurrentStepNumber);
+			System.out.println("Action: "+gCurrentAction);
+			System.out.println(gCurrentStepNumber);
+			switch(gCurrentAction.toLowerCase()){
 			
-			case "enter" :{
-				gCurrentInputVal = gRunTimeTestScript.readCell("UserInput", gCurrentStepNumber);
-				if(gCurrentObject.isDisplayed()&&gCurrentObject.isEnabled()){
-				gCurrentObject.sendKeys(gCurrentInputVal);
+				case "click" :{
+					try{
+						if(gCurrentObject.isDisplayed()&&gCurrentObject.isEnabled()) {
+							gCurrentObject.click();
+						}
+						else {
+							test.log(LogStatus.FAIL, "Object: "+gCurrentObjectName+" is either not displayed or enabled");
+						}
+						
+					}
+					catch(Exception e){
+						test.log(LogStatus.FAIL, "Exception occured while trying to click on: "+gCurrentObjectName+"."+e.getMessage());
+					}
+					break;
 				}
-				else{
-					test.log(LogStatus.FAIL, "The object: "+gCurrentObjectName+" is either not present or enabled.");
+				
+				case "enter" :{
+					gCurrentInputVal = gRunTimeTestScript.readCell("UserInput", gCurrentStepNumber);
+					if(gCurrentObject.isDisplayed()&&gCurrentObject.isEnabled()){
+					gCurrentObject.sendKeys(gCurrentInputVal);
+					}
+					else{
+						test.log(LogStatus.FAIL, "The object: "+gCurrentObjectName+" is either not present or enabled.");
+					}
+					gCurrentInputVal = null;
+					break;
 				}
-				gCurrentInputVal = null;
-				break;
+				
+				case "select" :{
+					gCurrentInputVal = gRunTimeTestScript.readCell("UserInput", gCurrentStepNumber);
+					try{
+						Select select = new Select(gCurrentObject);
+						select.selectByVisibleText(gCurrentInputVal);
+					}
+					catch (Exception e){
+						test.log(LogStatus.FAIL, "Unable to find the value: "+gCurrentInputVal+" in the dropdown: "+gCurrentObjectName);
+					}
+					break;
+								
+				}
+				
+				case "alert" :{
+					System.out.println("Inside alert");
+					DriverContext.Driver.switchTo().alert().accept();
+					System.out.println("Alert accepted");
+				}
 			}
-			
-			case "select" :{
-				gCurrentInputVal = gRunTimeTestScript.readCell("UserInput", gCurrentStepNumber);
-				try{
-					Select select = new Select(gCurrentObject);
-					select.selectByVisibleText(gCurrentInputVal);
-				}
-				catch (Exception e){
-					test.log(LogStatus.FAIL, "Unable to find the value: "+gCurrentInputVal+" in the dropdown: "+gCurrentObjectName);
-				}
-				break;
-							
-			}
+		}
+		else {
+			test.log(LogStatus.FAIL, "Unable to perform the action on the object: "+gCurrentObjectName+" as it could not be located on the application");
 		}
 	}
 	
@@ -116,6 +149,7 @@ public class DriverScript extends BaseTest {
 		
 		
 		while(gCurrentStepNumber<=gLastStepNumber){
+		
 			System.out.println(m_getScreenName());
 			if(m_getScreenName().trim()!="" && m_getScreenName()!=null){
 				if(gCurrentScreen==null){
@@ -130,15 +164,17 @@ public class DriverScript extends BaseTest {
 				}
 			}
 			gCurrentObjectName = m_getObjectName();
-			gCurrentObject = m_ObjectBuilder();
-			m_PerformAction();
+			System.out.println(gCurrentObjectName);
 			
+			if(!(gCurrentObjectName.equalsIgnoreCase("NA"))) {
+				gCurrentObject = m_ObjectBuilder();
+			}
+						
+			m_PerformAction();			
 			
 			
 			gCurrentStepNumber++;
+
 		}
-		
 	}
-	
-	
 }

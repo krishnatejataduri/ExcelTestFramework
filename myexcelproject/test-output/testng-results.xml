@@ -1,29 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
+<testng-results ignored="2" total="4" passed="0" failed="1" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2018-10-18T11:15:10Z" name="Suite" finished-at="2018-10-18T11:15:20Z" duration-ms="9898">
+  <suite started-at="2019-01-09T11:01:46Z" name="Suite" finished-at="2019-01-09T11:02:06Z" duration-ms="20233">
     <groups>
     </groups>
-    <test started-at="2018-10-18T11:15:10Z" name="Test" finished-at="2018-10-18T11:15:20Z" duration-ms="9898">
+    <test started-at="2019-01-09T11:01:46Z" name="Test" finished-at="2019-01-09T11:02:06Z" duration-ms="20233">
       <class name="testcases.TC001">
-        <test-method is-config="true" signature="initiateSuite()[pri:0, instance:testcases.TC001@53aac487]" started-at="2018-10-18T11:15:09Z" name="initiateSuite" finished-at="2018-10-18T11:15:10Z" duration-ms="307" status="PASS">
+        <test-method is-config="true" signature="initiateSuite()[pri:0, instance:testcases.TC001@53aac487]" started-at="2019-01-09T11:01:46Z" name="initiateSuite" finished-at="2019-01-09T11:01:46Z" duration-ms="369" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initiateSuite -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testcases.TC001@53aac487]" started-at="2018-10-18T11:15:10Z" name="setUp" finished-at="2018-10-18T11:15:16Z" duration-ms="6667" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testcases.TC001@53aac487]" started-at="2019-01-09T11:01:46Z" name="setUp" finished-at="2019-01-09T11:01:53Z" duration-ms="6647" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="runTest()[pri:0, instance:testcases.TC001@53aac487]" started-at="2018-10-18T11:15:16Z" name="runTest" finished-at="2018-10-18T11:15:18Z" duration-ms="1794" status="PASS">
+        <test-method signature="runTest()[pri:0, instance:testcases.TC001@53aac487]" started-at="2019-01-09T11:01:53Z" name="runTest" finished-at="2019-01-09T11:01:54Z" duration-ms="1160" status="SKIP">
+          <exception class="java.lang.Error">
+            <message>
+              <![CDATA[Unresolved compilation problem: 
+This method must return a result of type WebElement
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Error: Unresolved compilation problem: 
+This method must return a result of type WebElement
+
+at com.org.excelproject.myexcelproject.DriverScript.m_ObjectBuilder(DriverScript.java:53)
+at com.org.excelproject.myexcelproject.DriverScript.m_mainDriver(DriverScript.java:156)
+at testcases.TC001.runTest(TC001.java:13)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Error -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testcases.TC001@53aac487]" started-at="2018-10-18T11:15:19Z" name="tearDown" finished-at="2018-10-18T11:15:20Z" duration-ms="891" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testcases.TC001@53aac487]" started-at="2019-01-09T11:01:54Z" name="tearDown" finished-at="2019-01-09T11:01:55Z" duration-ms="927" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="closeSuite()[pri:0, instance:testcases.TC001@53aac487]" started-at="2018-10-18T11:15:20Z" name="closeSuite" finished-at="2018-10-18T11:15:20Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testcases.TC001@53aac487]" started-at="2019-01-09T11:01:55Z" name="setUp" finished-at="2019-01-09T11:02:04Z" duration-ms="9494" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="runTest()[pri:0, instance:testcases.TC001@53aac487]" started-at="2019-01-09T11:02:04Z" name="runTest" finished-at="2019-01-09T11:02:05Z" duration-ms="146" status="FAIL">
+          <exception class="java.lang.Error">
+            <message>
+              <![CDATA[Unresolved compilation problem: 
+This method must return a result of type WebElement
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Error: Unresolved compilation problem: 
+This method must return a result of type WebElement
+
+at com.org.excelproject.myexcelproject.DriverScript.m_ObjectBuilder(DriverScript.java:53)
+at com.org.excelproject.myexcelproject.DriverScript.m_mainDriver(DriverScript.java:156)
+at testcases.TC001.runTest(TC001.java:13)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.retryFailed(Invoker.java:838)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1009)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Error -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testcases.TC001@53aac487]" started-at="2019-01-09T11:02:05Z" name="tearDown" finished-at="2019-01-09T11:02:06Z" duration-ms="936" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="closeSuite()[pri:0, instance:testcases.TC001@53aac487]" started-at="2019-01-09T11:02:06Z" name="closeSuite" finished-at="2019-01-09T11:02:06Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeSuite -->

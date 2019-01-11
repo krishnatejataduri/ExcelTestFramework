@@ -2,7 +2,10 @@ package com.org.excelproject.myexcelproject;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import framework.listeners.EventListener;
@@ -13,6 +16,8 @@ public class FrameworkInit {
 		switch(Browser){
 			case Chrome:{
 				System.setProperty("webdriver.chrome.driver", ".\\resources\\drivers\\chromedriver.exe");
+				//DesiredCapabilities dc = new DesiredCapabilities();
+				//dc.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
 				DriverContext.Driver = new EventFiringWebDriver(new ChromeDriver());
 				DriverContext.eventListener = new EventListener();
 				DriverContext.Driver.register(DriverContext.eventListener);
