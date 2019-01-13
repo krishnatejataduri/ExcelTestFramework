@@ -5,11 +5,11 @@ import org.testng.annotations.Test;
 import com.org.excelproject.myexcelproject.BaseTest;
 import com.org.excelproject.myexcelproject.DriverScript;
 
-public class TC001 extends BaseTest {
+public class TC002 extends BaseTest {
 	private String TestScriptName = this.getClass().getSimpleName();
 	
 	@Test
-	public void TC001(){
+	public void TC002(){
 		DriverScript.getInstance().m_mainDriver(TestScriptName);
 	}
 

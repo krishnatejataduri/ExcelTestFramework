@@ -1,8 +1,11 @@
 package com.org.excelproject.myexcelproject;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.HashMap;
 
 import org.apache.commons.collections4.functors.NotNullPredicate;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -11,7 +14,9 @@ import org.testng.annotations.Test;
 import com.relevantcodes.extentreports.LogStatus;
 
 import framework.config.Settings;
+import framework.util.AppUtil;
 import framework.util.ExcelUtil;
+import rough.Catch;
 
 public class DriverScript extends BaseTest {
 
@@ -30,6 +35,7 @@ public class DriverScript extends BaseTest {
 	private HashMap<String,String> gRuntimeORTable = new HashMap<>();
 	private String gCurrentAction=null;
 	private String gCurrentInputVal = null;
+	private String gCurrentMethodName = null;
 	
 	public static DriverScript getInstance(){
 		return new DriverScript();
@@ -114,14 +120,57 @@ public class DriverScript extends BaseTest {
 					catch (Exception e){
 						test.log(LogStatus.FAIL, "Unable to find the value: "+gCurrentInputVal+" in the dropdown: "+gCurrentObjectName);
 					}
-					break;
-								
+					gCurrentInputVal = null;
+					break;				
 				}
 				
 				case "alert" :{
-					System.out.println("Inside alert");
-					DriverContext.Driver.switchTo().alert().accept();
-					System.out.println("Alert accepted");
+					
+					try {
+						Alert alt=null;
+						alt = DriverContext.Driver.switchTo().alert();
+						alt.accept();
+						//DriverContext.Driver.switchTo().alert().accept();
+						test.log(LogStatus.INFO, "Accepted the alert: "+alt.getText());
+					}
+					catch(Exception e) {
+						test.log(LogStatus.FAIL, "Encountered the exception while trying to accept alert. "+e.getClass().getName());
+					}
+					break;
+				}
+				
+				case "function" :{
+					gCurrentInputVal = gRunTimeTestScript.readCell("UserInput", gCurrentStepNumber);
+					gCurrentMethodName = gRunTimeTestScript.readCell("FunctionName", gCurrentStepNumber);
+					if(!(gCurrentInputVal.equals("NA"))) {
+						try {
+							Method method = AppUtil.class.getMethod(gCurrentMethodName,String.class);
+							try {
+								method.invoke(new AppUtil(), gCurrentInputVal);
+							} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						} catch (NoSuchMethodException | SecurityException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+					else {
+						try {
+							Method method = AppUtil.class.getMethod(gCurrentMethodName);
+							try {
+								method.invoke(new AppUtil());
+							} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						} catch (NoSuchMethodException | SecurityException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+					break;
 				}
 			}
 		}
@@ -171,7 +220,6 @@ public class DriverScript extends BaseTest {
 			}
 						
 			m_PerformAction();			
-			
 			
 			gCurrentStepNumber++;
 

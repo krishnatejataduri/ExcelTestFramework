@@ -10,6 +10,7 @@
   <test name="Test">
     <classes>
       <class name="testcases.TC001"/>
+      <class name="testcases.TC002"/>
       <class name="com.org.excelproject.myexcelproject.BaseTest"/>
     </classes>
   </test> <!-- Test -->
