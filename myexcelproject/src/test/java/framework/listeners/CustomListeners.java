@@ -55,7 +55,8 @@ public class CustomListeners extends BaseTest implements ITestListener{
 
 	public void onTestStart(ITestResult arg0) {
 		// TODO Auto-generated method stub
-		test = rep.startTest(arg0.getName().toUpperCase()); 
+		String testName = arg0.getInstance().getClass().getName().substring(10).toUpperCase();
+		test = rep.startTest(testName);
 	}
 
 	public void onTestSuccess(ITestResult arg0) {

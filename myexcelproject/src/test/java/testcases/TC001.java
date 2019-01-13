@@ -9,7 +9,7 @@ public class TC001 extends BaseTest {
 	private String TestScriptName = this.getClass().getSimpleName();
 	
 	@Test
-	public void TC001(){
+	public void runTest(){
 		DriverScript.getInstance().m_mainDriver(TestScriptName);
 	}
 
