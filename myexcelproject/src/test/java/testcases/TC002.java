@@ -12,5 +12,4 @@ public class TC002 extends BaseTest {
 	public void runTest(){
 		DriverScript.getInstance().m_mainDriver(TestScriptName);
 	}
-
 }

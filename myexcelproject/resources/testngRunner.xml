@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<suite>
+    <test>
+        <classes>
+            <class name="TC001"/>
+        </classes>
+    </test>
+    <test>
+        <classes>
+            <class name="TC004"/>
+        </classes>
+    </test>
+</suite>

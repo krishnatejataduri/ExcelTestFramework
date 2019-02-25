@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<suite allow-return-values="false" configfailurepolicy="skip" data-provider-thread-count="10" group-by-instances="false" guice-stage="DEVELOPMENT" junit="false" name="Suite" parallel="none" preserve-order="true" skipfailedinvocationcounts="false" thread-count="5">
+     
+    <listeners>
+              
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+              
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+              
+        <listener class-name="framework.listeners.CustomListeners"/>
+              
+        <!-- <listener class-name="framework.listeners.FailureRetryListener"/> -->
+          
+    </listeners>
+      
+    <test allow-return-values="false" group-by-instances="false" junit="false" name="Test" preserve-order="true" skipfailedinvocationcounts="false">
+            
+  
+        <classes>
+            <class name="testcases.TC001"/>
+        </classes>
+    </test>
+     
+    <!-- Test -->
+    
+</suite><!-- Suite -->

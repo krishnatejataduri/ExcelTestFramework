@@ -15,6 +15,9 @@ public class ConfigReader {
 		Settings.Browser = prop.getProperty("Browser");
 		Settings.TCExcelPath = prop.getProperty("TCExcelPath");
 		Settings.ORPath = prop.getProperty("ORPath");
+		Settings.RunConfigExcelPath = prop.getProperty("RunConfigExcelPath");
+		Settings.RunCongSheetName = prop.getProperty("RunCongSheetName");
+		Settings.XMLPath = prop.getProperty("XMLPath");
 	}
 	
 }
